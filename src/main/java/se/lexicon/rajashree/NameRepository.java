@@ -73,13 +73,26 @@ public class NameRepository {
 
     public static String[] findByFirstName(final String firstName){
         String[] name = {"Erik", "Ulf", "Simon", "Kent"};
+        int nameArrayLength = name.length;
+        String[] myarray = new String[nameArrayLength];
         for (int i = 0; i < name.length; i++) {
             if (name[i] == firstName) {
-
+                myarray[i] = name[i];
             }
         }
+        return myarray;
+    }
 
-        return name;
+    public static String[] findByLastName(final String lastName){
+        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
+        int nameArrayLength = name.length;
+        String[] myarray = new String[nameArrayLength];
+        for (int i = 0; i < name.length; i++) {
+            if (name[i] == lastName) {
+                myarray[i] = name[i];
+            }
+        }
+        return myarray;
     }
 
 

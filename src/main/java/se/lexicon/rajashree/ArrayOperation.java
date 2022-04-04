@@ -1,5 +1,7 @@
 package se.lexicon.rajashree;
 
+import java.util.Arrays;
+
 public class ArrayOperation {
 
     public String getName(){
@@ -8,7 +10,7 @@ public class ArrayOperation {
         String strLastName = "Svensson";
 
         String[] arrName = {strFirstName,strSpace,strLastName};
-        String strName = String.valueOf(arrName);
+        String strName = Arrays.toString(arrName);
 
         return strName;
     }
