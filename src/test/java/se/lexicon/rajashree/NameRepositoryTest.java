@@ -72,6 +72,17 @@ public class NameRepositoryTest {
         assertEquals(data, data1);
     }
 
+    @Test
+    public void lastName() {
+        NameRepository.clear();
+        String[] data = {"Erik Svensson"};
+        String name = "Svensson";
+        NameRepository.setNames(data);
+        String[] data1 = NameRepository.findByLastName(name);
+        System.out.println(data1.toString());
+        assertEquals(data, data1);
+    }
+
 
 
 
