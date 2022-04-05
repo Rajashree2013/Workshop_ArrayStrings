@@ -40,6 +40,28 @@ public class NameRepositoryTest {
     }
 
 
+    @Test
+    public void find() {
+        NameRepository.clear();
+        String[] data = {"Erik Svensson", "Ulf Bengtsson","Dillip Nayak","Rajashree Bhuyan"};
+        String name = "Rajashree Bhuyan";
+        NameRepository.setNames(data);
+        String data1 = NameRepository.find(name);
+        System.out.println(data1);
+        assertEquals(name, data1);
+    }
+
+    @Test
+    public void add() {
+        NameRepository.clear();
+        String[] data = {"Erik Svensson", "Ulf Bengtsson","Dillip Nayak","Rajashree Bhuyan"};
+        String name = "Shubham";
+        NameRepository.setNames(data);
+        boolean data1 = NameRepository.add(name);
+        System.out.println(data1);
+        assertEquals(false, data1);
+    }
+
 
 
 

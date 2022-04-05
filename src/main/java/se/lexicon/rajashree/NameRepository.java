@@ -6,6 +6,13 @@ public class NameRepository {
 
     private static String[] names = new String[0];
 
+    public static void main(String args[]){
+
+        setNames(new String[]{"Dillip", "Nayak", "Sujit", "khamari"});
+
+
+    }
+
     public static int getSize(){
         return names.length;
     }
@@ -30,11 +37,11 @@ public class NameRepository {
     }
 
     public static String find(final String fullName) {
-        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
+        //String[] name = {"Erik", "Ulf", "Simon", "Kent"};
         String strVal = null;
-        for (int i = 0; i < name.length; i++) {
-            if (name[i] == fullName) {
-                strVal =  name[i];
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] == fullName) {
+                strVal =  names[i];
                 break;
             } else {
                 strVal =  null;
@@ -44,17 +51,19 @@ public class NameRepository {
     }
 
     public static boolean add(final String fullName) {
-        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
+        //String[] name = {"Erik", "Ulf", "Simon", "Kent"};
         boolean bolVal = false;
-        for (int i = 0; i < name.length; i++) {
-            if (name[i] == fullName) {
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] == fullName) {
                 bolVal = false;
                 break;
-            } else {
-                name = Arrays.copyOf(name, name.length + 1);
-                name[name.length - 1] = fullName;
-                System.out.println(Arrays.toString(name));
+            }
+            if(!bolVal){
+                names = Arrays.copyOf(names, names.length + 1);
+                names[names.length - 1] = fullName;
                 bolVal = true;
+                System.out.println(Arrays.toString(names));
+                System.out.println(bolVal);
             }
         }
         return bolVal;
