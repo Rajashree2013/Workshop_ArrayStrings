@@ -58,8 +58,18 @@ public class NameRepositoryTest {
         String name = "Shubham";
         NameRepository.setNames(data);
         boolean data1 = NameRepository.add(name);
-        System.out.println(data1);
         assertEquals(false, data1);
+    }
+
+    @Test
+    public void firstName() {
+        NameRepository.clear();
+        String[] data = {"Erik Svensson"};
+        String name = "Erik";
+        NameRepository.setNames(data);
+        String[] data1 = NameRepository.findByFirstName(name);
+        System.out.println(data1.toString());
+        assertEquals(data, data1);
     }
 
 

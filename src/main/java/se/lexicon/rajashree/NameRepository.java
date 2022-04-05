@@ -62,23 +62,35 @@ public class NameRepository {
                 names = Arrays.copyOf(names, names.length + 1);
                 names[names.length - 1] = fullName;
                 bolVal = true;
-                System.out.println(Arrays.toString(names));
-                System.out.println(bolVal);
             }
         }
         return bolVal;
     }
 
+    private static String [] addToArray(String[] source, String newName){
+        String [] tmp = Arrays.copyOf(source, source.length + 1);
+        tmp[tmp.length - 1] = newName;
+        return tmp;
+    }
+
+
     public static String[] findByFirstName(final String firstName){
-        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
-        int nameArrayLength = name.length;
-        String[] myarray = new String[nameArrayLength];
-        for (int i = 0; i < name.length; i++) {
-            if (name[i] == firstName) {
-                myarray[i] = name[i];
+
+        // step1: traverse on array
+        // step2: split the fullName with whitespace and get the firstName
+        // step3: write a condition or if statement
+        // step4: define an empty array + add the found names to array
+        // step5: return the array
+
+        String [] result = {};
+        for (String element: names){
+            String[] fullNameArray = element.split(" "); //["Erik", "Svensson"]
+            String fName = fullNameArray[0];
+            if (fName.equalsIgnoreCase(firstName)){
+                result = addToArray(result, element);
             }
         }
-        return myarray;
+        return result;
     }
 
     public static String[] findByLastName(final String lastName){
