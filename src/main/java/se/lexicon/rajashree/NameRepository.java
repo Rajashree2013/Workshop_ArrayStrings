@@ -4,40 +4,29 @@ import java.util.Arrays;
 
 public class NameRepository {
 
-    public static void main(String args[]){
-        System.out.println( getSize());
-        clear();
-        setNames(new String[]{"Dillip", "Nayak", "Sujit", "khamari"});
-        find("Simon");
-        add("Dillip");
-    }
-
-
-    private static String[] names = {};
+    private static String[] names = new String[0];
 
     public static int getSize(){
-        String[] names = {"Rajashree","Bhuyan"};
         return names.length;
     }
-
-    public static void setNames(String[] names){
-        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
-        System.out.println(Arrays.toString(name));
-        for (int i = 0; i < names.length ; i ++){
-            name[i] = names[i];
-        }
-        System.out.println(Arrays.toString(name));
+    public static void setNames(String[] names) {
+        // use Arrays.copyOf()
+        NameRepository.names = names;
     }
-
+    /**
+     * Should completely empty the array.
+     */
     public static void clear(){
-        String[] names = {"Rajashree","Bhuyan"};
-        names = new String[]{};
-        System.out.println(names.length);
+        names = new String[0];
     }
 
+    /**
+     * Returns all names in a new array
+     *
+     * @return String[] This returns all array elements
+     */
     public static String[] findAll(){
-        String[] name = {"Erik", "Ulf", "Simon", "Kent"};
-        return name;
+        return Arrays.copyOf(names, names.length);
     }
 
     public static String find(final String fullName) {
@@ -94,13 +83,6 @@ public class NameRepository {
         }
         return myarray;
     }
-
-
-
-
-
-
-
 
 
 
