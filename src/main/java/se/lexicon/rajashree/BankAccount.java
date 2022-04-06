@@ -15,10 +15,6 @@ public class BankAccount {
         this.phoneNumber = phoneNumber;
     }
 
-    public BankAccount(int accountNumber, int balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
 
     public int getAccountNumber() {
         return accountNumber;
@@ -61,13 +57,20 @@ public class BankAccount {
     }
 
 
-    public int deposite(int accountNumber,int  balance){
+    public int deposite(int  balance, int amount){
+        balance = balance + amount;
+
         return balance;
     }
 
-    public int withdrawal(int accountNumber,int  balance){
+    public int withdrawal(int  balance,int amount){
         if(balance < 0){
             System.out.println("Insufficient Balance");
+        }else{
+            balance = balance - amount;
+            if(balance > 0){
+                return balance;
+            }
         }
         return balance;
     }
